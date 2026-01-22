@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16
+    container_name: LabGrade_db
+    environment:
+      POSTGRES_USER: labgrade
+      POSTGRES_PASSWORD: labgradepw
+      POSTGRES_DB: labgrade
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+volumes:
+  pgdata:
